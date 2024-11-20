@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">{{ recipe.title }}</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{{ recipe.photo.url }}" class="img-fluid" alt="{{ recipe.title }}">
+            </div>
+            <div class="col-md-6">
+                <h4>Description</h4>
+                <p>{{ recipe.description }}</p>
+                <h4>Ingredients</h4>
+                <p>{{ recipe.ingredients }}</p>
+                <h4>Instructions</h4>
+                <p>{{ recipe.instructions }}</p>
+                <p><strong>Created by:</strong> {{ recipe.created_by.username }}</p>
+                <p><strong>Created on:</strong> {{ recipe.created_at }}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
